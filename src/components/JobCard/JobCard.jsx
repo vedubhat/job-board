@@ -2,16 +2,20 @@ import React from "react";
 import "./JobCard.css";
 
 const JobCard = (props) => {
-    const job = props.job;
+    const {job} = props;
+    console.log('job',job)
     const parseJob = (job) => {
-        const title = job.title;
-        const titleParts = title.split("Is");
-        const company = titleParts[0].trim();
-        const description = "Is" + titleParts[1].trim();
-        return {
-            company: company,
-            description: description,
-            time: new Date(job.time * 1000).toLocaleDateString()
+        if(job != null || job !== undefined){
+            const title = job.title;
+            const titleParts = title.split("Is" || "is");
+            const company = titleParts[0];
+            const description = "Is" + titleParts[1];
+            
+            return {
+                company: company,
+                description: description,
+                time: new Date(job.time * 1000).toLocaleDateString()
+            }
         }
     }
     const parsedJob = parseJob(job);

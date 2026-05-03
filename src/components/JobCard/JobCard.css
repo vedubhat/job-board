@@ -1,5 +1,6 @@
 .job-card {
-    background-color: palegoldenrod;
+    background-color: white;
+    border: 1px solid black;
     width: 20vw;
     height: 30vh;
     border-radius: 5px;
